@@ -31,38 +31,40 @@ def convert_to_raw_url(github_url):
 
 # Dictionary of club images with corrected raw URLs
 club_image_paths = {
-    'Vasco da Gama': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/8922abb5bc16e473d94f49fe0759eadd5cd101a2/Vasco%20da%20Gama.png"),
-    'Athletico Paranaense': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Athletico%20Paranaense.png"),
-    'Atletico GO': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Atletico%20GO.png"),
-    'Atletico MG': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Atletico%20MG.png"),
-    'Bahia': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Bahia.png"),
-    'Botafogo RJ': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Botafogo%20RJ.png"),
-    'Ceara': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Ceara.png"),
-    'Corinthians': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Corinthians.png"),
-    'Criciuma': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Criciuma.png"),
-    'Cruzeiro': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Cruzeiro.png"),
-    'Cuiaba': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Cuiaba.png"),
-    'Flamengo': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Flamengo.png"),
-    'Fluminense': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Fluminense.png"),
-    'Fortaleza': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Fortaleza.png"),
-    'Gremio': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Gremio.png"),
-    'Internacional': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Internacional.png"),
-    'Juventude': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Juventude.png"),
-    'Mirassol': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Mirassol.png"),
-    'Palmeiras': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Palmeiras.png"),
-    'Red Bull Bragantino': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Red%20Bull%20Bragantino.png"),
-    'Santos': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Santos.png"),
-    'Sao Paulo': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Sao%20Paulo.png"),
-    'Sport': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Sport.png"),
-    'Vitoria': convert_to_raw_url("https://github.com/JAmerico1898/Match-OppositionAnalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Vitoria.png"),
+    'Vasco da Gama': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/2ebc80e41a6adebaefc0c5c6b8cbd876f69b0c1d/Vasco%20da%20Gama.png"),
+    'Athletico Paranaense': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/2ebc80e41a6adebaefc0c5c6b8cbd876f69b0c1d/Athletico%20Paranaense.png"),
+    'Atletico GO': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Atletico%20GO.png"),
+    'Atletico MG': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Atletico%20MG.png"),
+    'Bahia': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Bahia.png"),
+    'Botafogo RJ': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Botafogo%20RJ.png"),
+    'Ceara': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Ceara.png"),
+    'Corinthians': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Corinthians.png"),
+    'Criciuma': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Criciuma.png"),
+    'Cruzeiro': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Cruzeiro.png"),
+    'Cuiaba': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Cuiaba.png"),
+    'Flamengo': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Flamengo.png"),
+    'Fluminense': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Fluminense.png"),
+    'Fortaleza': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Fortaleza.png"),
+    'Gremio': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Gremio.png"),
+    'Internacional': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Internacional.png"),
+    'Juventude': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Juventude.png"),
+    'Mirassol': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Mirassol.png"),
+    'Palmeiras': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Palmeiras.png"),
+    'Red Bull Bragantino': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Red%20Bull%20Bragantino.png"),
+    'Santos': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Santos.png"),
+    'Sao Paulo': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Sao%20Paulo.png"),
+    'Sport': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Sport.png"),
+    'Vitoria': convert_to_raw_url("https://github.com/JAmerico1898/match-oppositionanalysis/blob/d10ba994c202a90e581a02825c4971694d6da95e/Vitoria.png"),
 }
 
 # GitHub raw URL
-image_url = "https://raw.githubusercontent.com/JAmerico1898/Match-OppositionAnalysis/f933cfa63f8efdd75d2ddaec606d650aa6d7aa2c/Brasileirão.jpg"
+image_url = "https://raw.githubusercontent.com/JAmerico1898/match-oppositionanalysis/2ebc80e41a6adebaefc0c5c6b8cbd876f69b0c1d/Brasileirão.jpg"
+
 
 st.markdown("<h2 style='text-align: center;'>Desempenho Esportivo dos Clubes</h2>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center;'>Série A - 2025</h3>", unsafe_allow_html=True)
 st.markdown("<h6 style='text-align: center;'>(dados Opta)</h6>", unsafe_allow_html=True)
+
 st.markdown(
     f"""
     <div style="display: flex; justify-content: center;">
