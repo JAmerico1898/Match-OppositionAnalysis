@@ -13271,6 +13271,7 @@ elif st.session_state.step == "opponent_analysis":
                 single_dfd = single_dfd.merge(single_dfd2, on="clube", how="left")
                 context_df = pd.read_csv("context.csv")
                 playstyle_df = pd.read_csv("play_style2.csv")
+                jogos_df = jogos_df.iloc[2]
                 
                 # Configure Google Gemini API
                 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
@@ -17025,7 +17026,7 @@ elif st.session_state.step == "opponent_analysis":
                 single_dfd = single_dfd.merge(single_dfd2, on="clube", how="left")
                 context_df = pd.read_csv("context.csv")
                 playstyle_df = pd.read_csv("play_style2.csv")
-
+                jogos_df = jogos_df.iloc[2]
                 
                 # Configure Google Gemini API
                 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
@@ -18486,6 +18487,8 @@ elif st.session_state.step == "opponent_analysis":
                 single_dfd = single_dfd.merge(single_dfd2, on="clube", how="left")
                 context_df = pd.read_csv("context_style.csv")
                 playstyle_df = pd.read_csv("play_style2.csv")
+                jogos_df = jogos_df.iloc[2]
+
 
                 
                 # Configure Google Gemini API
