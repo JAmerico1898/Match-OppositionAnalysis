@@ -23,6 +23,9 @@ from dotenv import load_dotenv
 import os
 from scipy.stats import zscore
 from fpdf import FPDF
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.decomposition import PCA
+
 
 
 # Convert GitHub blob URLs to raw URLs
@@ -7698,6 +7701,7 @@ elif st.session_state.step == "opponent_analysis":
 
                 # Compute mean for each column for each "team_name"
                 dfb = dfa.groupby('team_name')[columns_to_average].mean().reset_index()
+                dfb_casa = dfb.to_csv("dfb_casa.csv")
 
                 # Ensure dfb has the required columns
                 columns_to_normalize = dfb.columns[1:]
@@ -8842,7 +8846,7 @@ elif st.session_state.step == "opponent_analysis":
                 )
 
                 st.plotly_chart(fig, use_container_width=True, key="unique_key_2")
-              
+                
                 ################################################################################################################################# 
                 #################################################################################################################################
                 #################################################################################################################################
@@ -8871,6 +8875,7 @@ elif st.session_state.step == "opponent_analysis":
 
                 # Compute mean for each column for each "team_name"
                 dfb = dfa.groupby('team_name')[columns_to_average].mean().reset_index()
+                dfb_fora = dfb.to_csv("dfb_fora.csv")
 
                 # Ensure dfb has the required columns
                 columns_to_normalize = dfb.columns[1:]
@@ -10099,7 +10104,7 @@ elif st.session_state.step == "opponent_analysis":
                 st.markdown("<p style='font-size:35px; ; font-weight:bold; text-align:center;'>Análise de Adversário</p>", unsafe_allow_html=True)
                 
                 # Generate button
-                if st.button("Gerar Análise do Adversário"):
+                if st.button("Gerar Análise do Adversário", type='primary'):
                     with st.spinner("Gerando análise detalhada do adversário..."):
                         analysis = generate_opponent_analysis(
                             single_dfd,
@@ -10164,67 +10169,67 @@ elif st.session_state.step == "opponent_analysis":
 
             #### INCLUIR NOTA COM DESCRIÇÃO DAS MÉTRICAS FORTES E FRACAS
             st.write("---")
-            st.markdown("<p style='font-size:24px; font-weight:bold;'>Nota:</p>", unsafe_allow_html=True)
-            
-            def generate_metrics_sections(dfd, context_df):
-                # Generate positive metrics section (columns 1-7)
-                positive_metrics_names = dfd.columns[1:7]
+            st.markdown("<p style='font-size:20px;'>Quer saber as definições das Métricas? Clique abaixo!</p>", unsafe_allow_html=True)
+
+            if st.button("Definições das Métricas"):
+
+                st.markdown("<p style='font-size:24px; font-weight:bold;'>Nota:</p>", unsafe_allow_html=True)
                 
-                # Initialize positive definitions list
-                positive_metrics_definitions = []
-                
-                # For each positive metric name, find its definition in context_df
-                for metric_name in positive_metrics_names:
-                    # Find the row where 'Métrica' column equals the metric name
-                    matching_row = context_df[context_df['Métrica'] == metric_name]
+                def generate_metrics_sections(dfd, context_df):
+                    # Generate positive metrics section (columns 1-7)
+                    positive_metrics_names = dfd.columns[1:7]
                     
-                    # If a match is found, add the definition to the list
-                    if not matching_row.empty:
-                        definition = matching_row['Definição'].values[0]
-                        positive_metrics_definitions.append(definition)
-                    else:
-                        # If no match is found, add an empty string as placeholder
-                        positive_metrics_definitions.append("")
-                
-                # Create the positive metrics markdown
-                positive_markdown = "#### MÉTRICAS COM DESTAQUE POSITIVO\n"
-                for name, definition in zip(positive_metrics_names, positive_metrics_definitions):
-                    positive_markdown += f"- **{name}**: {definition}\n"
-                
-                # Generate negative metrics section (columns 7-13)
-                negative_metrics_names = dfd.columns[7:13]
-                
-                # Initialize negative definitions list
-                negative_metrics_definitions = []
-                
-                # For each negative metric name, find its definition in context_df
-                for metric_name in negative_metrics_names:
-                    # Find the row where 'Métrica' column equals the metric name
-                    matching_row = context_df[context_df['Métrica'] == metric_name]
+                    # Initialize positive definitions list
+                    positive_metrics_definitions = []
                     
-                    # If a match is found, add the definition to the list
-                    if not matching_row.empty:
-                        definition = matching_row['Definição'].values[0]
-                        negative_metrics_definitions.append(definition)
-                    else:
-                        # If no match is found, add an empty string as placeholder
-                        negative_metrics_definitions.append("")
-                
-                # Create the negative metrics markdown
-                negative_markdown = "#### MÉTRICAS COM DESTAQUE NEGATIVO\n"
-                for name, definition in zip(negative_metrics_names, negative_metrics_definitions):
-                    negative_markdown += f"- **{name}**: {definition}\n"
-                
-                # Display both sections
-                st.markdown(positive_markdown)
-                st.markdown(negative_markdown)
+                    # For each positive metric name, find its definition in context_df
+                    for metric_name in positive_metrics_names:
+                        # Find the row where 'Métrica' column equals the metric name
+                        matching_row = context_df[context_df['Métrica'] == metric_name]
+                        
+                        # If a match is found, add the definition to the list
+                        if not matching_row.empty:
+                            definition = matching_row['Definição'].values[0]
+                            positive_metrics_definitions.append(definition)
+                        else:
+                            # If no match is found, add an empty string as placeholder
+                            positive_metrics_definitions.append("")
+                    
+                    # Create the positive metrics markdown
+                    positive_markdown = "#### MÉTRICAS COM DESTAQUE POSITIVO\n"
+                    for name, definition in zip(positive_metrics_names, positive_metrics_definitions):
+                        positive_markdown += f"- **{name}**: {definition}\n"
+                    
+                    # Generate negative metrics section (columns 7-13)
+                    negative_metrics_names = dfd.columns[7:13]
+                    
+                    # Initialize negative definitions list
+                    negative_metrics_definitions = []
+                    
+                    # For each negative metric name, find its definition in context_df
+                    for metric_name in negative_metrics_names:
+                        # Find the row where 'Métrica' column equals the metric name
+                        matching_row = context_df[context_df['Métrica'] == metric_name]
+                        
+                        # If a match is found, add the definition to the list
+                        if not matching_row.empty:
+                            definition = matching_row['Definição'].values[0]
+                            negative_metrics_definitions.append(definition)
+                        else:
+                            # If no match is found, add an empty string as placeholder
+                            negative_metrics_definitions.append("")
+                    
+                    # Create the negative metrics markdown
+                    negative_markdown = "#### MÉTRICAS COM DESTAQUE NEGATIVO\n"
+                    for name, definition in zip(negative_metrics_names, negative_metrics_definitions):
+                        negative_markdown += f"- **{name}**: {definition}\n"
+                    
+                    # Display both sections
+                    st.markdown(positive_markdown)
+                    st.markdown(negative_markdown)
 
-            # Example usage:
-            generate_metrics_sections(dfd, context_df)
-
-
-
-
+                # Example usage:
+                generate_metrics_sections(dfd, context_df)
 
 # Footer
 st.divider()
