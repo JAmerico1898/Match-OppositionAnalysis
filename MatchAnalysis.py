@@ -152,8 +152,7 @@ if st.session_state.step == "club_analysis":
 
     df = pd.read_csv("performance_team.csv")
     df.rename(columns={"avg_recovery_time_z": "Tempo médio para recuperação de posse (s)"}, inplace=True)
-
-
+    
     clubes = ['Vasco da Gama', 'Atletico MG', 'Bahia', 
               'Botafogo RJ', 'Ceara', 'Corinthians', 'Cruzeiro', 
               'Flamengo', 'Fluminense', 'Fortaleza', 'Gremio', 
@@ -507,7 +506,7 @@ if st.session_state.step == "club_analysis":
                                     x=metrics_data[f'metrics_{metric}'],
                                     y=[0] * len(metrics_data[f'metrics_{metric}']),
                                     mode='markers',
-                                    name = f"Demais partidas do <span style='color: deepskyblue;'>{clube}</span>",
+                                    name = f"Demais partidas do {clube}</span>",
                                     marker=dict(color='deepskyblue', size=8),
                                     text=[f"{rank}/{total_partidas}" for rank in metrics_data[f'ranks_{metric}']],
                                     customdata=metrics_data[f'partida_names_{metric}'],
@@ -657,7 +656,7 @@ if st.session_state.step == "club_analysis":
                     atributo = st.selectbox("", options=atributos, index = None, placeholder = "Escolha o Atributo!")
                     if atributo == ("Defesa"):
                         
-                        #Plotar Primeiro Gráfico - Dispersão dos partida da mesma posição na 2024 em eixo único:
+                        #Plotar Primeiro Gráfico - Dispersão das partidas do mesmo clube em eixo único:
 
                         # Dynamically create the HTML string with the 'partida' variable
                         title_html = f"<h3 style='text-align: center; color: blue;'>{partida}</h3>"
@@ -667,7 +666,6 @@ if st.session_state.step == "club_analysis":
                                     )
                         st.markdown(title_html, unsafe_allow_html=True)
                         st.markdown("---")
-
 
                         attribute_chart_z = df1
                         # Collecting data
@@ -1031,7 +1029,7 @@ if st.session_state.step == "club_analysis":
 
                         st.markdown("""
                                     ### DEFESA - métricas
-                                - **PPDA**: “Passes por Ação Defensiva”. Mede a intensidade da pressão defensiva calculando o número de passes permitidos por um time antes de tentar uma ação defensiva. Quanto menor o PPDA, maior a intensidade da pressão defensiva.
+                                - **PPDA**: “Passes por Ação Defensiva”. Mede a intensidade da pressão defensiva calculando o número de passes permitidos por um time antes de tentar uma ação defensiva. Quanto menor o PPDA, maior a intensidade da pressão defensiva. A análise é limitada aos 60% iniciais do campo do oponente.
                                 - **Intensidade defensiva**: Número de duelos defensivos, duelos livres, interceptações, desarmes e faltas quando a posse é do adversário, ajustado pela posse do adversário. Mede quão ativamente um time se envolve em ações defensivas em relação à quantidade de tempo que o adversário tem a bola.
                                 - **Duelos defensivos vencidos (%)**: Porcentagem de duelos defensivos no solo que interrompem com sucesso a progressão de um oponente ou recuperam a posse de bola. Mede a eficácia de um time em desafios defensivos no solo.
                                 - **Altura defensiva (m)**: Altura média no campo, medida em metros, das ações defensivas de um time.
@@ -3394,7 +3392,7 @@ if st.session_state.step == "club_analysis":
 
                 st.markdown("""
                             ### DEFESA - métricas
-                        - **PPDA**: “Passes por ação defensiva”. Mede a intensidade da pressão defensiva calculando o número de passes permitidos por um time antes de tentar uma ação defensiva. Quanto menor o PPDA, maior a intensidade da pressão defensiva.
+                        - **PPDA**: “Passes por ação defensiva”. Mede a intensidade da pressão defensiva calculando o número de passes permitidos por um time antes de tentar uma ação defensiva. Quanto menor o PPDA, maior a intensidade da pressão defensiva. A análise é limitada aos 60% iniciais do campo do oponente.  A análise é limitada aos 60% iniciais do campo do oponente.
                         - **Intensidade defensiva**: Número de duelos defensivos, duelos livres, interceptações, desarmes e faltas quando a posse é do adversário, ajustado pela posse do adversário.
                         - **Duelos defensivos vencidos (%)**: Porcentagem de duelos defensivos no solo que interrompem com sucesso a progressão de um oponente ou recuperam a posse de bola.
                         - **Altura defensiva (m)**: Altura média no campo, medida em metros, das ações defensivas de um time.
@@ -5544,7 +5542,7 @@ if st.session_state.step == "club_analysis":
 
                 st.markdown("""
                             ### DEFESA - métricas
-                        - **PPDA**: “Passes por ação defensiva”. Mede a intensidade da pressão defensiva calculando o número de passes permitidos por um time antes de tentar uma ação defensiva. Quanto menor o PPDA, maior a intensidade da pressão defensiva.
+                        - **PPDA**: “Passes por ação defensiva”. Mede a intensidade da pressão defensiva calculando o número de passes permitidos por um time antes de tentar uma ação defensiva. Quanto menor o PPDA, maior a intensidade da pressão defensiva. A análise é limitada aos 60% iniciais do campo do oponente.
                         - **Intensidade defensiva**: Número de duelos defensivos, duelos livres, interceptações, desarmes e faltas quando a posse é do adversário, ajustado pela posse do adversário.
                         - **Duelos defensivos vencidos (%)**: Porcentagem de duelos defensivos no solo que interrompem com sucesso a progressão de um oponente ou recuperam a posse de bola.
                         - **Altura defensiva (m)**: Altura média no campo, medida em metros, das ações defensivas de um time.
@@ -6899,7 +6897,7 @@ if st.session_state.step == "club_analysis":
 
                 st.markdown("""
                             ### DEFESA - métricas
-                        - **PPDA**: “Passes por ação defensiva”. Mede a intensidade da pressão defensiva calculando o número de passes permitidos por um time antes de tentar uma ação defensiva. Quanto menor o PPDA, maior a intensidade da pressão defensiva.
+                        - **PPDA**: “Passes por ação defensiva”. Mede a intensidade da pressão defensiva calculando o número de passes permitidos por um time antes de tentar uma ação defensiva. Quanto menor o PPDA, maior a intensidade da pressão defensiva. A análise é limitada aos 60% iniciais do campo do oponente.
                         - **Intensidade defensiva**: Número de duelos defensivos, duelos livres, interceptações, desarmes e faltas quando a posse é do adversário, ajustado pela posse do adversário.
                         - **Duelos defensivos vencidos (%)**: Porcentagem de duelos defensivos no solo que interrompem com sucesso a progressão de um oponente ou recuperam a posse de bola.
                         - **Altura defensiva (m)**: Altura média no campo, medida em metros, das ações defensivas de um time.
@@ -9007,7 +9005,7 @@ if st.session_state.step == "club_analysis":
                             f"Contexto Conceitual - Atributos e Métricas:\n{context_df.to_string()}\n\n"
                             f"Estilos de Jogo:\n{playstyle_df.to_string()}\n\n"
                             "Considere o os resultados dos jogos, o desempenho nas métricas e a relação entre a definição das métricas destacadas e dos atributos aos quais pertencem para identificar o estilo de jogo do clube. "
-                            "Se a identificação for clara, descreva o possível estilo de jogo da equipe com base nas definições fornecidas para atributos e métricas. Os resultados dos jogos oferecem insights sobre a acurácia da análise. "
+                            "Se a identificação for clara, descreva o possível estilo de jogo da equipe com base nas definições fornecidas para atributos e métricas. "
                             "A análise deve ser bem estruturada, técnica mas compreensível e com aproximadamente 500 palavras. "
                             "Não apresente z-scores na análise final."
                         )
@@ -9057,6 +9055,7 @@ if st.session_state.step == "club_analysis":
                                 from fpdf import FPDF
                                 
                                 def create_pdf(text):
+                                    text = text.replace('\u2013', '-')  # quick fix for en dash
                                     pdf = FPDF()
                                     pdf.add_page()
                                     pdf.set_auto_page_break(auto=True, margin=15)
@@ -9080,7 +9079,7 @@ if st.session_state.step == "club_analysis":
                                         else:
                                             pdf.multi_cell(0, 10, line)
                                     
-                                    return pdf.output(dest="S").encode("latin-1")
+                                    return pdf.output(dest="S").encode("latin-1", errors="replace")
                                 
                                 clube = single_dfd.iloc[0, 0]
                                 pdf_data = create_pdf(analysis)
@@ -10687,7 +10686,7 @@ if st.session_state.step == "club_analysis":
                             f"Contexto Conceitual - Atributos e Métricas:\n{context_df.to_string()}\n\n"
                             f"Estilos de Jogo:\n{playstyle_df.to_string()}\n\n"
                             "Considere o os resultados dos jogos, o desempenho nas métricas e a relação entre a definição das métricas destacadas e dos atributos aos quais pertencem para identificar o estilo de jogo do clube. "
-                            "Se a identificação for clara, descreva o possível estilo de jogo da equipe com base nas definições fornecidas para atributos e métricas. Os resultados dos jogos oferecem insights sobre a acurácia da análise. "
+                            "Se a identificação for clara, descreva o possível estilo de jogo da equipe com base nas definições fornecidas para atributos e métricas. "
                             "A análise deve ser bem estruturada, técnica mas compreensível e com aproximadamente 500 palavras. "
                             "Não apresente z-scores na análise final."
                         )
@@ -10741,6 +10740,7 @@ if st.session_state.step == "club_analysis":
                                 from fpdf import FPDF
                                 
                                 def create_pdf(text):
+                                    text = text.replace('\u2013', '-')  # quick fix for en dash
                                     pdf = FPDF()
                                     pdf.add_page()
                                     pdf.set_auto_page_break(auto=True, margin=15)
@@ -10764,7 +10764,7 @@ if st.session_state.step == "club_analysis":
                                         else:
                                             pdf.multi_cell(0, 10, line)
                                     
-                                    return pdf.output(dest="S").encode("latin-1")
+                                    return pdf.output(dest="S").encode("latin-1", errors="replace")
                                 
                                 clube = single_dfd.iloc[0, 0]
                                 pdf_data = create_pdf(analysis)
@@ -13382,6 +13382,7 @@ elif st.session_state.step == "opponent_analysis":
                             from fpdf import FPDF
                             
                             def create_pdf(text):
+                                text = text.replace('\u2013', '-')  # quick fix for en dash
                                 pdf = FPDF()
                                 pdf.add_page()
                                 pdf.set_auto_page_break(auto=True, margin=15)
@@ -13405,7 +13406,7 @@ elif st.session_state.step == "opponent_analysis":
                                     else:
                                         pdf.multi_cell(0, 10, line)
                                 
-                                return pdf.output(dest="S").encode("latin-1")
+                                return pdf.output(dest="S").encode("latin-1", errors="replace")
                             
                             clube = single_dfd.iloc[0, 0]
                             pdf_data = create_pdf(analysis)
@@ -14813,7 +14814,7 @@ elif st.session_state.step == "opponent_analysis":
                         f"Contexto Conceitual - Atributos e Métricas:\n{context_df.to_string()}\n\n"
                         f"Estilos de Jogo:\n{playstyle_df.to_string()}\n\n"
                         "Considere o os resultados dos jogos, o desempenho nas métricas e a relação entre a definição das métricas destacadas e dos atributos aos quais pertencem para identificar o estilo de jogo do clube. "
-                        "Se a identificação for clara, descreva o possível estilo de jogo da equipe com base nas definições fornecidas para atributos e métricas. Os resultados dos jogos oferecem insights sobre a acurácia da análise. "
+                        "Se a identificação for clara, descreva o possível estilo de jogo da equipe com base nas definições fornecidas para atributos e métricas. "
                         "A análise deve ser bem estruturada, técnica mas compreensível e com aproximadamente 500 palavras. "
                         "Não apresente z-scores na análise final."
                     )
@@ -14866,6 +14867,7 @@ elif st.session_state.step == "opponent_analysis":
                             from fpdf import FPDF
                             
                             def create_pdf(text):
+                                text = text.replace('\u2013', '-')  # quick fix for en dash
                                 pdf = FPDF()
                                 pdf.add_page()
                                 pdf.set_auto_page_break(auto=True, margin=15)
@@ -14889,7 +14891,7 @@ elif st.session_state.step == "opponent_analysis":
                                     else:
                                         pdf.multi_cell(0, 10, line)
                                 
-                                return pdf.output(dest="S").encode("latin-1")
+                                return pdf.output(dest="S").encode("latin-1", errors="replace")
                             
                             clube = single_dfd.iloc[0, 0]
                             pdf_data = create_pdf(analysis)
@@ -17130,6 +17132,7 @@ elif st.session_state.step == "opponent_analysis":
                             from fpdf import FPDF
                             
                             def create_pdf(text):
+                                text = text.replace('\u2013', '-')  # quick fix for en dash
                                 pdf = FPDF()
                                 pdf.add_page()
                                 pdf.set_auto_page_break(auto=True, margin=15)
@@ -17153,7 +17156,7 @@ elif st.session_state.step == "opponent_analysis":
                                     else:
                                         pdf.multi_cell(0, 10, line)
                                 
-                                return pdf.output(dest="S").encode("latin-1")
+                                return pdf.output(dest="S").encode("latin-1", errors="replace")
                             
                             clube = single_dfd.iloc[0, 0]
                             pdf_data = create_pdf(analysis)
@@ -18541,7 +18544,7 @@ elif st.session_state.step == "opponent_analysis":
                         f"Contexto Conceitual - Atributos e Métricas:\n{context_df.to_string()}\n\n"
                         f"Estilos de Jogo:\n{playstyle_df.to_string()}\n\n"
                         "Considere o os resultados dos jogos, o desempenho nas métricas e a relação entre a definição das métricas destacadas e dos atributos aos quais pertencem para identificar o estilo de jogo do clube. "
-                        "Se a identificação for clara, descreva o possível estilo de jogo da equipe com base nas definições fornecidas para atributos e métricas. Os resultados dos jogos oferecem insights sobre a acurácia da análise. "
+                        "Se a identificação for clara, descreva o possível estilo de jogo da equipe com base nas definições fornecidas para atributos e métricas. "
                         "A análise deve ser bem estruturada, técnica mas compreensível e com aproximadamente 500 palavras. "
                         "Não apresente z-scores na análise final."
                     )
@@ -18592,6 +18595,7 @@ elif st.session_state.step == "opponent_analysis":
                             from fpdf import FPDF
                             
                             def create_pdf(text):
+                                text = text.replace('\u2013', '-')  # quick fix for en dash
                                 pdf = FPDF()
                                 pdf.add_page()
                                 pdf.set_auto_page_break(auto=True, margin=15)
@@ -18615,7 +18619,7 @@ elif st.session_state.step == "opponent_analysis":
                                     else:
                                         pdf.multi_cell(0, 10, line)
                                 
-                                return pdf.output(dest="S").encode("latin-1")
+                                return pdf.output(dest="S").encode("latin-1", errors="replace")
                             
                             clube = single_dfd.iloc[0, 0]
                             pdf_data = create_pdf(analysis)
