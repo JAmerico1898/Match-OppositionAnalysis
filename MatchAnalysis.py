@@ -653,7 +653,7 @@ if st.session_state.step == "club_analysis":
                             legend=dict(
                                 orientation="h",
                                 yanchor="bottom",
-                                y=+0.08,
+                                y=+0.02,
                                 xanchor="center",
                                 x=0.5,
                                 font=dict(size=16)
