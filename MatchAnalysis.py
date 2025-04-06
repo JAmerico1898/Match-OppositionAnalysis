@@ -87,23 +87,83 @@ if "step" not in st.session_state:
 if "selected_option" not in st.session_state:
     st.session_state.selected_option = None
 
-# Function to update the selected option
+# Define button click handlers
+def click_club_analysis():
+    st.session_state.step = "club_analysis"
+    st.session_state.selected_option = None
+
+def click_opponent_analysis():
+    st.session_state.step = "opponent_analysis"
+    st.session_state.selected_option = None
+
+# Function for the second level options (Clube vs Clube, etc.)
 def select_option(option):
     st.session_state.selected_option = option
+
+# Define custom CSS for button styling
+st.markdown("""
+<style>
+    /* Default button style (light gray) */
+    .stButton > button {
+        background-color: #f0f2f6 !important;
+        color: #31333F !important;
+        border-color: #d2d6dd !important;
+    }
+    
+    /* Selected button style (red) */
+    .selected-button {
+        background-color: #FF4B4B !important;
+        color: white !important;
+        border-color: #FF0000 !important;
+    }
+    
+    /* For second level buttons */
+    div[data-testid="stButton"] button.option-selected {
+        background-color: #FF4B4B !important;
+        color: white !important;
+        border-color: #FF0000 !important;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Create three columns for the initial choices
 col1, col2, col3 = st.columns([4, 1, 4])
 
+# Render buttons based on current state
 with col1:
-    if st.button("Análise do Clube", type='primary', use_container_width=True):
-        st.session_state.step = "club_analysis"
-        st.session_state.selected_option = None  # Reset selection when switching
+    if st.session_state.step == "club_analysis":
+        # Display selected (red) button for club analysis
+        st.markdown(
+            """
+            <div data-testid="stButton">
+                <button class="selected-button" style="width:100%; padding:0.5rem; font-weight:400;">
+                    Análise do Clube
+                </button>
+            </div>
+            """, 
+            unsafe_allow_html=True
+        )
+    else:
+        # Display default (gray) button
+        st.button("Análise do Clube", key="club_btn", use_container_width=True, on_click=click_club_analysis)
 
 with col3:
-    if st.button("Análise do Adversário", type='primary', use_container_width=True):
-        st.session_state.step = "opponent_analysis"
-        st.session_state.selected_option = None  # Reset selection when switching
-    
+    if st.session_state.step == "opponent_analysis":
+        # Display selected (red) button for opponent analysis
+        st.markdown(
+            """
+            <div data-testid="stButton">
+                <button class="selected-button" style="width:100%; padding:0.5rem; font-weight:400;">
+                    Análise do Adversário
+                </button>
+            </div>
+            """, 
+            unsafe_allow_html=True
+        )
+    else:
+        # Display default (gray) button
+        st.button("Análise do Adversário", key="opponent_btn", use_container_width=True, on_click=click_opponent_analysis)
+                
 # Step 1: Clube Analysis
 if st.session_state.step == "club_analysis":
     
@@ -134,7 +194,8 @@ if st.session_state.step == "club_analysis":
         }
     </style>
     """, unsafe_allow_html=True)
-
+    
+    
     st.markdown("""
     <div class="info-box">
     <h4>Permite a análise do Clube em 5 dimensões:</h4>
@@ -1834,7 +1895,7 @@ if st.session_state.step == "club_analysis":
                         # Dynamically create the HTML string with the 'partida' variable
                         title_html = f"<h3 style='text-align: center; color: blue;'>{partida}</h3>"
                         # Use the dynamically created HTML string in st.markdown
-                        st.markdown(f"<h3 style='text-align: center; color: deepskyblue;'>A Transição Defensiva em relação aos demais jogos do {clube}</h3>",
+                        st.markdown(f"<h3 style='text-align: center; color: deepskyblue;'>O Ataque em relação aos demais jogos do {clube}</h3>",
                                     unsafe_allow_html=True
                                     )
                         st.markdown(title_html, unsafe_allow_html=True)
@@ -12051,29 +12112,6 @@ if st.session_state.step == "club_analysis":
                 #################################################################################################################################
                 ################################################################################################################################# 
                 #################################################################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    
-                    
 
 # Step 2: Clube Analysis
 elif st.session_state.step == "opponent_analysis":
