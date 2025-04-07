@@ -8533,7 +8533,7 @@ if st.session_state.step == "club_analysis":
                             legend=dict(
                                 orientation="h",
                                 yanchor="bottom",
-                                y=-0.15,
+                                y=-0.12,
                                 xanchor="center",
                                 x=0.5,
                                 font=dict(size=16)
@@ -8547,7 +8547,7 @@ if st.session_state.step == "club_analysis":
                             xref="paper",
                             yref="paper",
                             x=0.5,
-                            y=-0.06,
+                            y=0.02,
                             showarrow=False,
                             font=dict(size=16, color='black', weight='bold')
                         )
@@ -8588,7 +8588,7 @@ if st.session_state.step == "club_analysis":
                         st.session_state.show_destaques2 = False
 
                     # Your heading
-                    st.markdown(f"<h4 style='text-align: center; color: black;'>Para ver os Destaques Positivos e Negativos do {clube}<br>nos últimos 5 jogos em {st.session_state.selected_option}<br>Clique abaixo!</h4>",
+                    st.markdown(f"<h4 style='text-align: center; color: black;'>Para ver os Destaques Positivos e Negativos do {clube}<br>nos últimos 5 jogos em Casa,<br>Clique abaixo!</h4>",
                                 unsafe_allow_html=True)
 
                     # When the button is clicked, change session state
@@ -8896,7 +8896,7 @@ if st.session_state.step == "club_analysis":
 
                         # Dynamically create the HTML string with the 'club' variable
                         # Use the dynamically created HTML string in st.markdown
-                        st.markdown(f"<h4 style='text-align: center; color: black;'>Destaques positivos do {clube}<br>nos últimos 5 jogos em {st.session_state.selected_option}</h4>",
+                        st.markdown(f"<h4 style='text-align: center; color: black;'>Destaques positivos do {clube}<br>nos últimos 5 jogos em Casa</h4>",
                                     unsafe_allow_html=True
                                     )
 
@@ -9271,7 +9271,7 @@ if st.session_state.step == "club_analysis":
                                 xref="paper",
                                 yref="paper",
                                 x=0.5,
-                                y=-0.06,
+                                y=-0.02,
                                 showarrow=False,
                                 font=dict(size=16, color='black', weight='bold')
                             )
@@ -9314,7 +9314,7 @@ if st.session_state.step == "club_analysis":
 
                         # Dynamically create the HTML string with the 'club' variable
                         # Use the dynamically created HTML string in st.markdown
-                        st.markdown(f"<h4 style='text-align: center; color: black;'>Destaques negativos do {clube}<br>nos últimos 5 jogos em {st.session_state.selected_option}</h4>",
+                        st.markdown(f"<h4 style='text-align: center; color: black;'>Destaques negativos do {clube}<br>nos últimos 5 jogos em Casa</h4>",
                                     unsafe_allow_html=True
                                     )
 
@@ -9689,7 +9689,7 @@ if st.session_state.step == "club_analysis":
                                 xref="paper",
                                 yref="paper",
                                 x=0.5,
-                                y=-0.06,
+                                y=-0.02,
                                 showarrow=False,
                                 font=dict(size=16, color='black', weight='bold')
                             )
@@ -9781,7 +9781,7 @@ if st.session_state.step == "club_analysis":
                         # Create prompt for Gemini
                         prompt = (
                             f"Escreva uma análise aprofundada sobre a performance do clube {clube} baseada nos dados fornecidos, em português brasileiro. \n\n"
-                            f"Escreva a análise sob a perspectiva do treinador do clube {clube} que deseja avaliar os pontos fortes e fracos de sua equipe. \n\n"
+                            f"Escreva a análise sob a perspectiva da Comissão Técnica do clube {clube}, avaliando os pontos fortes e fracos de sua equipe. \n\n"
                             f"Análise geral sobre os atributos do clube {clube}:\n{pd.Series(attributes_sorted).to_string()}\n\n"
                             f"Pontos fortes (métricas em z-score nas quais o clube se destacou positivamente):\n{pd.Series(metricas_melhores_sorted).to_string()}\n\n"
                             f"Pontos fracos (métricas em z-score nas quais o clube se destacou negativamente):\n{pd.Series(metricas_piores_sorted).to_string()}\n\n"
@@ -10699,7 +10699,7 @@ if st.session_state.step == "club_analysis":
                             xref="paper",
                             yref="paper",
                             x=0.5,
-                            y=-0.06,
+                            y=0.02,
                             showarrow=False,
                             font=dict(size=16, color='black', weight='bold')
                         )
@@ -10740,7 +10740,7 @@ if st.session_state.step == "club_analysis":
                         st.session_state.show_destaques1 = False
 
                     # Your heading
-                    st.markdown(f"<h4 style='text-align: center; color: black;'>Para ver os Destaques Positivos e Negativos do {clube}<br>nos últimos 5 jogos {st.session_state.selected_option} de Casa<br>Clique abaixo!</h4>",
+                    st.markdown(f"<h4 style='text-align: center; color: black;'>Para ver os Destaques Positivos e Negativos do {clube}<br>nos últimos 5 jogos Fora de Casa,<br>Clique abaixo!</h4>",
                                 unsafe_allow_html=True)
 
                     # When the button is clicked, change session state
@@ -11046,7 +11046,7 @@ if st.session_state.step == "club_analysis":
 
                         # Dynamically create the HTML string with the 'club' variable
                         # Use the dynamically created HTML string in st.markdown
-                        st.markdown(f"<h4 style='text-align: center; color: black;'>Destaques positivos do {clube}<br>nos últimos 5 jogos {st.session_state.selected_option} de Casa</h4>",
+                        st.markdown(f"<h4 style='text-align: center; color: black;'>Destaques positivos do {clube}<br>nos últimos 5 jogos Fora de Casa</h4>",
                                     unsafe_allow_html=True
                                     )
 
@@ -11408,7 +11408,7 @@ if st.session_state.step == "club_analysis":
                                 xref="paper",
                                 yref="paper",
                                 x=0.5,
-                                y=-0.06,
+                                y=0.02,
                                 showarrow=False,
                                 font=dict(size=16, color='black', weight='bold')
                             )
@@ -11452,7 +11452,7 @@ if st.session_state.step == "club_analysis":
 
                         # Dynamically create the HTML string with the 'club' variable
                         # Use the dynamically created HTML string in st.markdown
-                        st.markdown(f"<h4 style='text-align: center; color: black;'>Destaques negativos do {clube}<br>nos últimos 5 jogos {st.session_state.selected_option} de Casa</h4>",
+                        st.markdown(f"<h4 style='text-align: center; color: black;'>Destaques negativos do {clube}<br>nos últimos 5 jogos Fora de Casa</h4>",
                                     unsafe_allow_html=True
                                     )
 
@@ -11813,7 +11813,7 @@ if st.session_state.step == "club_analysis":
                                 legend=dict(
                                     orientation="h",
                                     yanchor="bottom",
-                                    y=-0.15,
+                                    y=-0.17,
                                     xanchor="center",
                                     x=0.5,
                                     font=dict(size=16)
@@ -11827,7 +11827,7 @@ if st.session_state.step == "club_analysis":
                                 xref="paper",
                                 yref="paper",
                                 x=0.5,
-                                y=-0.06,
+                                y=-0.02,
                                 showarrow=False,
                                 font=dict(size=16, color='black', weight='bold')
                             )
@@ -11927,7 +11927,7 @@ if st.session_state.step == "club_analysis":
                         # Create prompt for Gemini
                         prompt = (
                             f"Escreva uma análise aprofundada sobre a performance do clube {clube} baseada nos dados fornecidos, em português brasileiro. \n\n"
-                            f"Escreva a análise sob a perspectiva do treinador do clube {clube} que deseja avaliar os pontos fortes e fracos de sua equipe. \n\n"
+                            f"Escreva a análise sob a perspectiva da Comissão Técnica do clube {clube}, avaliando os pontos fortes e fracos de sua equipe. \n\n"
                             f"Análise geral sobre os atributos do clube {clube}:\n{pd.Series(attributes_sorted).to_string()}\n\n"
                             f"Pontos fortes (métricas em z-score nas quais o clube se destacou positivamente):\n{pd.Series(metricas_melhores_sorted).to_string()}\n\n"
                             f"Pontos fracos (métricas em z-score nas quais o clube se destacou negativamente):\n{pd.Series(metricas_piores_sorted).to_string()}\n\n"
